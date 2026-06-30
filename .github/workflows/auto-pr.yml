@@ -14,14 +14,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
-
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v7
+        uses: repo-sync/pull-request@v2
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          base: main
-          branch: ${{ github.ref_name }}
-          title: "Merge ${{ github.ref_name }} into main"
-          body: |
-            Automated Pull Request
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          source_branch: ${{ github.ref_name }}
+          destination_branch: main
+          pr_title: "${{ github.ref_name }}"
+          pr_body: |
+            Auto-generated Pull Request
