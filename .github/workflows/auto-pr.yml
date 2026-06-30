@@ -20,8 +20,8 @@ jobs:
         uses: peter-evans/create-pull-request@v7
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          base: develop
+          base: main
           branch: ${{ github.ref_name }}
-          title: "Merge ${{ github.ref_name }} into develop"
+          title: "Merge ${{ github.ref_name }} into main"
           body: |
             Automated Pull Request
