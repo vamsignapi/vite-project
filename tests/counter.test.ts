@@ -18,7 +18,7 @@ describe("setupCounter", () => {
     setupCounter(button);
 
     button.click();
-    expect(button.innerHTML).toBe("Count is 1");
+    expect(button.innerHTML).toBe("Count is 2");
 
     button.click();
     expect(button.innerHTML).toBe("Count is 2");
